@@ -19,7 +19,7 @@ let navLinks = document.querySelectorAll('header nav a');
 window.onscroll = () => {
     sections.forEach(section => {
         let scrolHeight = window.scrollY
-        let sectionTop = section.offsetTop
+        let sectionTop = section.offsetTop-150
         let sectionHeight = section.offsetHeight
         let id = section.getAttribute('id')
         if(scrolHeight >= sectionTop && scrolHeight <= sectionTop + sectionHeight) {
