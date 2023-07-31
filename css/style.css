@@ -89,6 +89,18 @@ span {
 }
 .home-img img{
     width: 35vw;
+    animation: floatImage 4s ease-in-out infinite; 
+}
+@keyframes floatImage{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-2.4rem);     
+    }
+    100%{
+        transform: translateY(0);
+    }
 }
 .home-content h3{
     font-size: 3.2rem;
@@ -282,15 +294,14 @@ section.contact form .btn{
 footer{
     display: flex;
     justify-content: space-around;
-    padding: 2rem
-
+    padding: 2rem;
+    align-items: center;
 }
 footer .text-container{
     align-self: center;
 }
 footer .text-container p{
     font-size: 1.6rem;
-    align-self: center;
 }
 
 footer a{
@@ -313,7 +324,7 @@ footer a:hover{
 
 
 
-/* media querioes*/
+
 @media (max-width: 1200px) {
     html{
         font-size: 51%;
@@ -333,9 +344,21 @@ footer a:hover{
         flex-direction: column;
         gap: 15px;
     }
+    section#about.about-container{
+        flex-direction: column-reverse;       
+    }
+    .home-img img{
+        width: 90vw;
+    }
+    .about-img img{
+        width: 90vw;
+    }
+    section#projects.projects-container .projects{
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-@media (max-width: 603px){
+@media (max-width: 537px){
     #social-media-btn{
         display: block;
     }
@@ -356,5 +379,19 @@ footer a:hover{
         display: block;
         font-size: 2rem;
         margin: 2rem 0;
+    }
+    section#projects.projects-container .projects{
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 500px){
+    section.contact form .input-box input{
+        width: 100%;
+    }
+    footer{
+        flex-direction: column-reverse;
+    }
+    footer .text-container p{
+        margin-top: 2rem;
     }
 }
